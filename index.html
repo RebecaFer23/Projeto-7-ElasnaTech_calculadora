@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:: Desafio 7 ♥::</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<body>
+    <header>
+        <img src="/assets/calculator.png" alt="Calculadora" />
+        <nav>
+            <ul>
+                <li>Menu 1</li>
+                <li>Menu 2</li>
+                <li>Menu 3</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1 class="title">Dom - Docment Object Model</h1>
+        <div id="div01" class="content">
+            <input type="number" name="txt01" id="txt01" class="txt">
+            <input type="number" name="txt02" id="txt02" class="txt">
+            <input type="button" value="+" id="btnSomar" class="txt">
+            <input type="button" value="-" id="btnSub" class="txt">
+            <input type="button" value="*" id="btnMult" class="txt">
+            <input type="button" value="/" id="btnDividir" class="txt">
+            <input type="button" value="C" id="btnC" class="txt">
+            <div id="resultado">
+                Resultado
+            </div>
+        </div>
+    </main>
+    <footer>
+        Prof Gil | Elas na Tech 2023 ♥
+    </footer>
+    <script>
+        var btnSomar = document.getElementById('btnSomar');
+        btnSomar.addEventListener('click', somar);
+
+        var btnSomar = document.getElementById('btnSub');
+        btnSub.addEventListener('click', subtrair);
+
+        var btnMult = document.getElementById('btnMult');
+        btnMult.addEventListener('click', multiplicar);
+
+        var btnDividir = document.getElementById('btnDividir');
+        btnDividir.addEventListener('click', dividir);
+
+        var btnC = document.getElementById('btnC');
+        btnC.addEventListener('click', C);
+        
+        function somar() {
+            var box1 = document.getElementById('txt01');
+            var box2 = document.getElementById('txt02');
+            var result = document.getElementById('resultado');
+
+            var num1 = parseFloat(box1.value);
+            var num2 = parseFloat(box2.value);
+
+            var resultado = num1 + num2;
+            result.innerText = 'A soma é: ' + resultado;
+        }
+
+
+        function subtrair(){
+            var box1 = document.getElementById('txt01');
+            var box2 = document.getElementById('txt02');
+            var result = document.getElementById('resultado');
+
+            var num1 = parseFloat(box1.value);
+            var num2 = parseFloat(box2.value);
+
+            var resultado = num1 - num2;
+            result.innerText = 'A subtração é: ' + resultado;
+
+        }
+
+        function multiplicar(){
+            var box1 = document.getElementById('txt01');
+            var box2 = document.getElementById('txt02');
+
+            var result = document.getElementById('resultado');
+            var num1 = parseFloat(box1.value);
+            var num2 = parseFloat(box2.value);
+
+            var resultado = num1 * num2;
+            result.innerText = 'A multiplicação é: ' + resultado;
+
+        }
+    
+        
+        function dividir(){
+            var box1 = document.getElementById('txt01');
+            var box2 = document.getElementById('txt02');
+            var result = document.getElementById('resultado');
+
+            var num1 = parseFloat(box1.value);
+            var num2 = parseFloat(box2.value);
+
+            var resultado = num1 / num2;
+            result.innerText = 'A divisão é: ' + resultado;
+
+        }
+    
+        function C(){
+            var box1 = document.getElementById('txt01');
+            var box2 = document.getElementById('txt02');
+            var result = document.getElementById('resultado');
+
+            box1.value ='';
+            box2.value ='';
+            result.innerText = 'resultado';
+        }
+
+    </script>
+
+
+</body>
+
+</html>
